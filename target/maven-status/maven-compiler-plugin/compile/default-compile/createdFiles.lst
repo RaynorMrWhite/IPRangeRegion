@@ -1,0 +1,7 @@
+tt\IpRangeRegionApplication.class
+rr\tt\ww\model\IPRange.class
+rr\tt\ww\model\Ipv6_Prefix.class
+rr\tt\ww\config\BeanConfig.class
+rr\tt\ww\Service\JsonParsingService.class
+rr\tt\ww\model\Prefix.class
+rr\tt\ww\repository\JsonParsingServiceInterface.class
