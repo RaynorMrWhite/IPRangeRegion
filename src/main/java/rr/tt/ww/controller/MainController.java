@@ -10,6 +10,7 @@ import rr.tt.ww.model.IPRange;
 import rr.tt.ww.service.JsonParsingService;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +24,8 @@ public class MainController {
 
     @GetMapping
     public String main(final Model model) throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
-        IPRange prefixes = mapper.readValue("https://ip-ranges.amazonaws.com/ip-ranges.json", IPRange.class);
-        System.out.println(prefixes);
-        List<IPRange> ipRanges = (List<IPRange>) parsingService.parse(JSON_IP_RANGE_URL);
-        model.addAttribute("ipaddress", ipRanges.get(0));
+        IPRange ipRanges = (IPRange) parsingService.parse(JSON_IP_RANGE_URL);
+        model.addAttribute("ipaddress", ipRanges.getPrefixes());
         return MAIN_PAGE;
     }
 

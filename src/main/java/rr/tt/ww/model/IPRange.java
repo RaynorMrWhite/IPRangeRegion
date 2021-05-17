@@ -8,7 +8,7 @@ import java.util.List;
 public class IPRange {
     private String syncToken;
     private String createDate;
-    private List<Prefix> prefixes;
+    private List<Ip_Prefix> ipPrefixes;
     private List<Ipv6_Prefix> ipv6_prefixes;
 
     public List<Ipv6_Prefix> getIpv6_prefixes() {
@@ -35,11 +35,11 @@ public class IPRange {
         this.createDate = createDate;
     }
 
-    public List<Prefix> getPrefixes() {
-        return prefixes;
+    public List<Ip_Prefix> getPrefixes() {
+        return ipPrefixes;
     }
 
-    public void setPrefixes(List<Prefix> prefixes) {
-        this.prefixes = prefixes;
+    public void setPrefixes(List<Ip_Prefix> ipPrefixes) {
+        this.ipPrefixes = ipPrefixes;
     }
 }
