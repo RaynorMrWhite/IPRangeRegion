@@ -32,8 +32,8 @@ public class MainController {
         ModelAndView mv = new ModelAndView();
         IPRange ipRanges = (IPRange) parsingService.parse(JSON_IP_RANGE_URL);
         mv.addObject("title", "IP-Adress by Region");
-        mv.addObject("message", ".");
         mv.addObject("ipaddresses", IpRegionService.findbyregion(region,ipRanges));
+        System.out.println(IpRegionService.findbyregion(region,ipRanges).size());
         mv.setViewName("list_IPbyRegion");
         return mv;
     }
