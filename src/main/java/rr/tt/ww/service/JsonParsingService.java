@@ -3,7 +3,7 @@ package rr.tt.ww.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import rr.tt.ww.model.IPRange;
+import rr.tt.ww.model.IpAddresses;
 import rr.tt.ww.repository.JsonParsingServiceInterface;
 
 
@@ -16,7 +16,7 @@ public class JsonParsingService implements JsonParsingServiceInterface {
 
     @Override
     public Object parse(String url) {
-        return restTemplate.getForObject(url, IPRange.class);
+        return restTemplate.getForObject(url, IpAddresses.class);
     }
 
 }

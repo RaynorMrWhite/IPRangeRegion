@@ -1,7 +1,7 @@
 package rr.tt.ww.repository;
 
-import rr.tt.ww.model.IPRange;
+import rr.tt.ww.model.IpAddresses;
 
 public interface IpRegionServiceRepository  {
-    IPRange findbyregion(String region, IPRange ipRange);
+    IpAddresses findbyregion(String region, IpAddresses ipRange);
 }

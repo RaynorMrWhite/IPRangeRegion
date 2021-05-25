@@ -2,7 +2,7 @@ package rr.tt.ww.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.web.client.RestTemplate;
-import rr.tt.ww.model.IPRange;
+import rr.tt.ww.model.IpAddresses;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +13,7 @@ class IpRegionServiceTest {
         String JSON_IP_RANGE_URL = "https://ip-ranges.amazonaws.com/ip-ranges.json";
         RestTemplate restTemplate = new RestTemplate();
         IpRegionService ipRegionService = new IpRegionService();
-        IPRange ipRanges = (IPRange) restTemplate.getForObject(JSON_IP_RANGE_URL, IPRange.class);
+        IpAddresses ipRanges = (IpAddresses) restTemplate.getForObject(JSON_IP_RANGE_URL, IpAddresses.class);
         assertNotNull(ipRegionService.findbyregion("eu", ipRanges));
         assertNotNull(ipRegionService.findbyregion("us", ipRanges));
         assertNotNull(ipRegionService.findbyregion("cn", ipRanges));

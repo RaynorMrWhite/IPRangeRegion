@@ -2,9 +2,9 @@ package rr.tt.ww.service;
 
 import inet.ipaddr.AddressStringException;
 import inet.ipaddr.IPAddressString;
-import rr.tt.ww.model.IPRange;
-import rr.tt.ww.model.Ip_Prefix;
-import rr.tt.ww.model.Ipv6_Prefix;
+import rr.tt.ww.model.IpAddresses;
+import rr.tt.ww.model.IpPrefix;
+import rr.tt.ww.model.Ipv6Prefix;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,25 +17,25 @@ public class IpRegionService {
      * @param iprange
      * @return List containing IP-Range of IP and IPv6_Prefixes matching the region
      */
-    public List<String> findbyregion(String region, IPRange iprange){
+    public List<String> findbyregion(String region, IpAddresses iprange){
         List<String> IpList = new ArrayList<String>();
         region = region.toLowerCase();
         if(region.equals("all")){
-            for(Ip_Prefix ip : iprange.getPrefixes()) {
+            for(IpPrefix ip : iprange.getPrefixes()) {
                 IpList.add(this.getIPRange(ip.getIp_prefix()));
 
             }
-            for(Ipv6_Prefix ip : iprange.getIpv6_prefixes())   {
+            for(Ipv6Prefix ip : iprange.getIpv6_prefixes())   {
                 IpList.add(this.getIPRange(ip.getIpv6_prefix()));
                 }
         }
 
-        for(Ip_Prefix ip : iprange.getPrefixes()) {
+        for(IpPrefix ip : iprange.getPrefixes()) {
             if (ip.getRegion().substring(0,2).equals(region)) {
                 IpList.add(this.getIPRange(ip.getIp_prefix()));
             }
         }
-        for(Ipv6_Prefix ip : iprange.getIpv6_prefixes())   {
+        for(Ipv6Prefix ip : iprange.getIpv6_prefixes())   {
             if (ip.getRegion().substring(0,2).equals(region)) {
                 IpList.add(this.getIPRange(ip.getIpv6_prefix()));
             }

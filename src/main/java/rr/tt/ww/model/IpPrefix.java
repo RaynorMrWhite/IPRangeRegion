@@ -4,7 +4,7 @@ package rr.tt.ww.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties
-public class Ip_Prefix {
+public class IpPrefix {
     private String ip_prefix;
     private String region;
 
