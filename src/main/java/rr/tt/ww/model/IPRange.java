@@ -1,23 +1,12 @@
 package rr.tt.ww.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.util.List;
 
-@JsonIgnoreProperties
 public class IPRange {
     private String syncToken;
     private String createDate;
-    private List<Ip_Prefix> ipPrefixes;
+    private List<Ip_Prefix> prefixes;
     private List<Ipv6_Prefix> ipv6_prefixes;
-
-    public List<Ipv6_Prefix> getIpv6_prefixes() {
-        return ipv6_prefixes;
-    }
-
-    public void setIpv6_prefixes(List<Ipv6_Prefix> ipv6_prefixes) {
-        this.ipv6_prefixes = ipv6_prefixes;
-    }
 
     public String getSyncToken() {
         return syncToken;
@@ -36,10 +25,19 @@ public class IPRange {
     }
 
     public List<Ip_Prefix> getPrefixes() {
-        return ipPrefixes;
+        return prefixes;
     }
 
     public void setPrefixes(List<Ip_Prefix> ipPrefixes) {
-        this.ipPrefixes = ipPrefixes;
+        this.prefixes = ipPrefixes;
     }
+
+    public List<Ipv6_Prefix> getIpv6_prefixes() {
+        return ipv6_prefixes;
+    }
+
+    public void setIpv6_prefixes(List<Ipv6_Prefix> ipv6_prefixes) {
+        this.ipv6_prefixes = ipv6_prefixes;
+    }
+
 }

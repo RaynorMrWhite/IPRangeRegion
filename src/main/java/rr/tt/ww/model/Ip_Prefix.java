@@ -7,8 +7,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Ip_Prefix {
     private String ip_prefix;
     private String region;
-    private String service;
-    private String network_border_group;
 
     public String getIp_prefix() {
         return ip_prefix;
@@ -26,19 +24,4 @@ public class Ip_Prefix {
         this.region = region;
     }
 
-    public String getService() {
-        return service;
-    }
-
-    public void setService(String service) {
-        this.service = service;
-    }
-
-    public String getNetwork_border_group() {
-        return network_border_group;
-    }
-
-    public void setNetwork_border_group(String network_border_group) {
-        this.network_border_group = network_border_group;
-    }
 }

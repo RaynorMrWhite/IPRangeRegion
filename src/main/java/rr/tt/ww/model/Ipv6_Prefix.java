@@ -1,13 +1,12 @@
 package rr.tt.ww.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Ipv6_Prefix {
+
     private String ipv6_prefix;
     private String region;
-    private String service;
-    private String network_border_group;
 
     public String getIp_prefix() {
         return ipv6_prefix;
@@ -25,19 +24,4 @@ public class Ipv6_Prefix {
         this.region = region;
     }
 
-    public String getService() {
-        return service;
-    }
-
-    public void setService(String service) {
-        this.service = service;
-    }
-
-    public String getNetwork_border_group() {
-        return network_border_group;
-    }
-
-    public void setNetwork_border_group(String network_border_group) {
-        this.network_border_group = network_border_group;
-    }
 }
