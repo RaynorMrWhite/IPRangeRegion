@@ -15,7 +15,7 @@ public class IpRegionService {
      *
      * @param region
      * @param iprange
-     * @return List containing IP and IPv6_Prefixes which match with the region
+     * @return List containing IP-Range of IP and IPv6_Prefixes matching the region
      */
     public List<String> findbyregion(String region, IPRange iprange){
         List<String> IpList = new ArrayList<String>();
@@ -26,7 +26,7 @@ public class IpRegionService {
 
             }
             for(Ipv6_Prefix ip : iprange.getIpv6_prefixes())   {
-                IpList.add(this.getIPRange(ip.getIp_prefix()));
+                IpList.add(this.getIPRange(ip.getIpv6_prefix()));
                 }
         }
 
@@ -37,7 +37,7 @@ public class IpRegionService {
         }
         for(Ipv6_Prefix ip : iprange.getIpv6_prefixes())   {
             if (ip.getRegion().substring(0,2).equals(region)) {
-                IpList.add(this.getIPRange(ip.getIp_prefix()));
+                IpList.add(this.getIPRange(ip.getIpv6_prefix()));
             }
         }
         return IpList;

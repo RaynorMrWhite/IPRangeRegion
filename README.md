@@ -1,7 +1,6 @@
 # IP_Range
-Eine Applikation um die IP-Adressen von
+Eine Applikation um den Addressbereich IP-Adressen von
  "https://ip-ranges.amazonaws.com/ip-ranges.json" nach Region sortiert auszugeben.
 
-Beim Starten sieht man Zunächst ein Eingabefeld für die Region als Tag wie zum Bsp.:"us".
-Durch Klicken des Buttons werden alle IP-Addressen in der Region ausgegeben.
-Sobald man sich in diesem Bildschirm befindet kann man die Tags auch in die URL eingeben.
+Nach Start gibt man in die url zum Bsp.:"?region=eu" ein.
+Durch Klicken von Enter wird der Adressbereich aller IP-Addressen in der Region in eine text-datei unter "src/main/resources/" gespeichert, in der Form region+IpRange.
